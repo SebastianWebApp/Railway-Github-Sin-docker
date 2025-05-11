@@ -1,22 +1,13 @@
 {
-  "name": "express_p1",
+  "name": "railway-ejemplo",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Proyecto simple para Railway",
+  "main": "servidor.js",
+  "type": "module",
   "scripts": {
-    "start": "node ./src/index",
-    "start:dev": "nodemon ./src/index",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node servidor.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "express-routemap": "^1.6.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.20"
+    "express": "^4.18.2"
   }
 }
