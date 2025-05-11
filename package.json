@@ -1,13 +1,18 @@
 {
-  "name": "railway-ejemplo",
+  "name": "pruebita",
   "version": "1.0.0",
-  "description": "Proyecto simple para Railway",
+  "description": "prueba con cruds",
   "main": "servidor.js",
   "type": "module",
   "scripts": {
-    "start": "node servidor.js"
+    "start": "node servidor.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "Melany",
+  "license": "ISC",
   "dependencies": {
-    "express": "^4.21.2"
+    "dotenv": "16.5.0",
+    "express": "5.1.0",
+    "mysql2": "^3.14.0"
   }
 }
