@@ -1,18 +1,21 @@
 import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Para que __dirname funcione con ES Modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-// Ruta principal
-app.get("/", (req, res) => {
-  res.send("hola")
+// Servir archivos estáticos
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Ruta raíz
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
-
-setInterval(() => {
-  console.log('Server is running...');
-}, 10000);  // Log cada 10 segundos
-
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
