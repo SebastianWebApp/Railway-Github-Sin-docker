@@ -5,7 +5,7 @@ async function createDatabase(){
     try {
         
         // Crear base de datos
-        await pool.query(`CREATE DATABASE IF NOT EXISTS Prueba`);
+        await pool.query(`CREATE DATABASE IF NOT EXISTS railway`);
         console.log("Base de datos verificada o creada.");
             
       } catch (error) {
@@ -16,7 +16,7 @@ async function createDatabase(){
 async function createTable() {
     try {
         // Seleccionar la base de datos
-        await pool.query("USE Prueba");
+        await pool.query("USE railway");
     
         // Crear tabla
         const createTableSQL = `CREATE TABLE IF NOT EXISTS personas (
