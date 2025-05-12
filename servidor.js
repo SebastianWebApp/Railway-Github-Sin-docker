@@ -26,6 +26,7 @@ app.use(json());
 
 // Permite mostrar la página web segun la ruta
 app.use(express.static(path.join(__dirname)));
+app.use('/css', express.static(path.join(__dirname, 'css')));
 
 
 // ---------------------- Login ------------------------------
