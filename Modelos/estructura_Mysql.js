@@ -13,6 +13,7 @@ async function createDatabase(){
       }
 }
 
+
 async function createTable() {
     try {
         // Seleccionar la base de datos
