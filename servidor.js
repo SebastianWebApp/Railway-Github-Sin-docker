@@ -51,7 +51,7 @@ app.get("/Actualizar", (req,res) =>{
 
 //url  que no este aqui se va al error del middleware
 //-------------Gateway-------------------------
-app.use("/api", router);
+// app.use("/api", router);
 
 
 
