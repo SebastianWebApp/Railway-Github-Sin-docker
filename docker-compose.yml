@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  # Servicio de MySQL
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    ports:
+      - "3007:3306"  # Corregido el puerto interno (MySQL usa 3306, no 3006)
+    environment:
+      MYSQL_ROOT_PASSWORD: root  # Corregido el nombre de la variable
+    restart: always
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - app-network
+
+  # Servicio de la aplicación
+  nuevacarpeta:
+    build:
+      context: .
+    container_name: nuevacarpeta
+    image: melany555/pruebita1:latest
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+    restart: always
+    networks:
+      - app-network
+
+# Red
+networks:
+  app-network:
+    driver: bridge
+
+# Volumen
+volumes:
+  mysql_data:
+    driver: local
+
