@@ -30,6 +30,8 @@ app.use('/css', express.static(path.join(__dirname, 'css')));
 
 // Para que Express sirva archivos JS
 app.use('/js', express.static(path.join(__dirname, 'js')));
+
+
 // ---------------------- Login ------------------------------
 
 app.get("/", (req,res) =>{
