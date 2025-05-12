@@ -2,12 +2,12 @@ import express, {json} from "express";
 import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath, pathToFileURL } from "url";
-// import test_Conexion from "./Controlador/test_Conexion.js";
-// import router from "./Routers/router_mysql.js";
+import test_Conexion from "./Controlador/test_Conexion.js";
+import router from "./Routers/router_mysql.js";
 
 //Permitimos la conceccion con el .env
 dotenv.config();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 //Iniciamos express
 const app = express();
@@ -18,7 +18,7 @@ const __dirname = path.dirname(__filename);
 
 //Para que acepte json
 app.use(json());
-// test_Conexion();
+test_Conexion();
 
 
   
@@ -26,6 +26,7 @@ app.use(json());
 
 // Permite mostrar la página web segun la ruta
 app.use(express.static(path.join(__dirname)));
+// Habilita acceso a la carpeta css
 app.use('/css', express.static(path.join(__dirname, 'css')));
 
 
@@ -50,7 +51,7 @@ app.get("/Actualizar", (req,res) =>{
 
 //url  que no este aqui se va al error del middleware
 //-------------Gateway-------------------------
-// app.use("/api", router);
+app.use("/api", router);
 
 
 
