@@ -7,7 +7,7 @@ import { fileURLToPath, pathToFileURL } from "url";
 
 //Permitimos la conceccion con el .env
 dotenv.config();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 //Iniciamos express
 const app = express();
