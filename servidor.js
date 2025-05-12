@@ -2,7 +2,7 @@ import express, {json} from "express";
 import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath, pathToFileURL } from "url";
-// import test_Conexion from "./Controlador/test_Conexion.js";
+import test_Conexion from "./Controlador/test_Conexion.js";
 // import router from "./Routers/router_mysql.js";
 
 //Permitimos la conceccion con el .env
@@ -18,7 +18,7 @@ const __dirname = path.dirname(__filename);
 
 //Para que acepte json
 app.use(json());
-// test_Conexion();
+test_Conexion();
 
 
   
