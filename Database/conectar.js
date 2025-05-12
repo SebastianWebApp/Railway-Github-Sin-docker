@@ -8,7 +8,8 @@ const pool = mysql.createPool({
     user: process.env.USER,
     password: process.env.PASSWORD,
     port: process.env.PORT1,
-    database: process.env.DATABASE
+    database: process.env.DATABASE,
+    charset: 'utf8mb4' // Especificar un conjunto de caracteres compatible
 });
 
 export default pool;
