@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath, pathToFileURL } from "url";
 import test_Conexion from "./Controlador/test_Conexion.js";
-// import router from "./Routers/router_mysql.js";
+import router from "./Routers/router_mysql.js";
 
 //Permitimos la conceccion con el .env
 dotenv.config();
@@ -51,7 +51,7 @@ app.get("/Actualizar", (req,res) =>{
 
 //url  que no este aqui se va al error del middleware
 //-------------Gateway-------------------------
-// app.use("/api", router);
+app.use("/api", router);
 
 
 
